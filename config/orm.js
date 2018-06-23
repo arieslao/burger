@@ -52,8 +52,6 @@ connection.query(query, [value, id], function(error, data) {
 //    * Export the ORM object in `module.exports`.
 module.exports = {
     selectAll    : selectAll,
-    // selectScoped : selectScoped,
-    // selectOne    : selectOne,
     insertOne    : insertOne,
     updateOne    : updateOne
 };
