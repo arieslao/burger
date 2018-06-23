@@ -10,13 +10,19 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
+// heroku deployment
+if (process.env.JAWS_DB) {
+  connection = mysql.createConnection (process.env.JAWS_DB);
+} else {
+
 var connection = mysql.createConnection({
-  port: 8889, //updated per MAMP
+  // port: 8889, //updated per MAMP
   host: "localhost",
   user: "root", //updated per MySQL Workbench
   password: "root", 
   database: "burgers_db"
 });
+}
 
 // Make connection.
 connection.connect(function(err) {
